@@ -41,7 +41,7 @@ function NewMsg({cards, setCards}){
     function handleSubmit(e){
         e.preventDefault();
 
-        fetch('http://localhost:3000/bday_cards', {
+        fetch('https://kathys-birthday.herokuapp.com/bday_cards', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

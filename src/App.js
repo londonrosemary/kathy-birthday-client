@@ -11,7 +11,7 @@ function App() {
 
   //Get all cards
   useEffect(() => {
-    fetch('http://localhost:3000/bday_cards')
+    fetch('https://kathys-birthday.herokuapp.com/bday_cards')
         .then(resp => resp.json())
         .then(cards => setCards(cards))
   }, [cards])
