@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 function BdayCard({card}){
     return(
         <div>
-            <p>{card.name}</p>
-            <img src={card.img64} height="300px" />
+            <p>From: {card.name}</p>
+            <img alt="Image not found :("  src={card.img64} height="300px" />
             <p>{card.msg}</p>
         </div>
     )

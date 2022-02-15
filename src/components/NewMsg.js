@@ -6,7 +6,8 @@ function NewMsg({cards, setCards}){
     const [name, setName] = useState("")
     const [img64, setImg64] = useState("")
     const [msg, setMsg] = useState("")
-    
+
+    //Variables
     let navigate = useNavigate();
 
     //Navigate to Dashboard
@@ -52,30 +53,30 @@ function NewMsg({cards, setCards}){
                 msg: msg
             })
             })
-                .then(resp => resp.json())
-                .then(newCard => {
-                    setCards([...cards, newCard])
-                })
+            .then(resp => resp.json())
+            .then(newCard => {
+                setCards([...cards, newCard])
+            })
         handleGoBack()
-
     }
 
     return(
         <div>
+            <h2>Send Kathy your own birthday message!</h2>
             <form onSubmit={handleSubmit}>
-                <label>NAME</label>
-                <input type="text" name="name" onChange={(e) => setName(e.target.value)} required></input>
-                <label>MESSAGE</label>
-                <input type="text" name="message" onChange={(e) => setMsg(e.target.value)} ></input>
-                <label>IMAGE</label>
+                <label>Name</label>
+                <input id="nameInput" type="text" name="name" onChange={(e) => setName(e.target.value)} required></input>
+                <label>Message</label>
+                <input id="msgInput" type="text" name="message" onChange={(e) => setMsg(e.target.value)} ></input>
+                <label>Image</label>
                 <input type="file" onChange={(e) => uploadImage(e)}></input>
-                <button type="submit">submit</button>
+                <button id="imgInput" type="submit">submit</button>
             </form>
             <h3>Birthday Card Preview:</h3>
             <p>{name}</p>
-            <img src={img64} height="300 px"/>
+            <img alt="No Image Selected" src={img64} height="300 px"/>
             <p>{msg}</p>
-            <button onClick={handleGoBack}>cancel</button>
+            <button onClick={handleGoBack}>Back</button>
         </div>
     )
 }

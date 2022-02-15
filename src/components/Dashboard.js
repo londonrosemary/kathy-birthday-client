@@ -1,9 +1,7 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import {useNavigate} from 'react-router-dom'
 
-import BdayCard from './BdayCard';
-
-function Dashboard({cards, setCards, cardArr}){
+function Dashboard({cardArr}){
     
     let navigate = useNavigate();
 
@@ -12,12 +10,11 @@ function Dashboard({cards, setCards, cardArr}){
         navigate('new')
     }
 
-
     return(
         <div>
-            <h1>HAPPY 80TH BIRTHDAY KATHY</h1>
+            <h1 id="banner" >HAPPY 80TH BIRTHDAY KATHY</h1>
             {cardArr}
-            <button onClick={navNewMsg}>Add a message</button>
+            <button onClick={navNewMsg}>Create a Card</button>
         </div>
     )
 }
